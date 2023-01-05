@@ -1,0 +1,12 @@
+.all-dogs-list-item {
+    border: solid 1px black;
+    border-radius: 2px;
+    width: 500px;
+    margin-top: 8px;
+}
+
+.all-dogs-list-item > div {
+    margin: 8px;
+    display: flex;
+    justify-content: space-between;
+}

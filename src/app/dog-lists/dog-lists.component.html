@@ -1,0 +1,16 @@
+<div class="dog-list-tabs">
+  <!-- Navigation Tabs -->
+  <div *ngFor="let label of menuLabels">
+    <button
+      (click)="navButtonClicked(label)"
+
+      [ngClass]="label === currentLabel ? 'buttonSelected' : ''"
+    >
+      {{ label }}
+    </button>
+  </div>
+</div>
+<!-- Lists -->
+<div class="lists-container">
+        <app-all-dogs *ngIf="currentLabel === 'All Dogs'" [dogNames]="getDogNames"></app-all-dogs>
+</div>

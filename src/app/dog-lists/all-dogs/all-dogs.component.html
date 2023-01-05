@@ -1,0 +1,47 @@
+<!-- Pagination buttons -->
+<div class="pagination-buttons">
+  <button (click)="changeIndex(-1)" [disabled]="paginationIndex === 0">
+    Prev
+  </button>
+  <button (click)="changeIndex(1)" [disabled]="paginationIndex + 1 === totalPages">
+    Next
+  </button>
+  <span>{{ paginationIndex + 1 }} / {{ totalPages }}</span>
+  <span>Total results: {{ dogNames ? dogNames.length : 0 }}</span>
+</div>
+<!-- List of dogs -->
+<div *ngFor="let curName of curDogNames">
+  <!-- Dog List Item -->
+  <div class="all-dogs-list-item">
+    <div>
+      <a
+        routerLink="/crisis-center"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Crisis Center</a
+      >
+      <button type="button" routerLink="/sidekicks">
+        Go to sidekicks (bad link)
+      </button>
+      <button routerLink="dog/{{ curName }}">
+        {{ curName }}
+      </button>
+    </div>
+  </div>
+</div>
+<!-- <div *ngFor="let curName of dogNames">
+  <div class="all-dogs-list-item">
+    <div>
+      <a
+        routerLink="/crisis-center"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Crisis Center</a
+      >
+      <button type="button" routerLink="/sidekicks">Go to sidekicks (bad link)</button>
+      <button routerLink="dog/{{curName}}">
+        {{ curName }}
+      </button>
+    </div>
+  </div>
+</div> -->

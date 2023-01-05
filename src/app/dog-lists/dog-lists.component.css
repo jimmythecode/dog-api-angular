@@ -1,0 +1,8 @@
+.dog-list-tabs {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.buttonSelected {
+    background-color: white;
+}
